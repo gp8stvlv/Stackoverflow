@@ -2,11 +2,31 @@
 <html lang="en" class="h-100">
 
 <head>
+    <link href="../static/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/main.css">
     <meta charset="utf-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
-<body class="h-100">
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"> <!-- отвечает за отображение nav bar -->
+        <div class="container-fluid"> <!-- отвечает за контейнер внутри nav bar -->
+            <h3 class="">MyStackoverflow</h3>
 
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">ASK</button>
+            </form>
+
+            <img src="../static/images/smile.jpeg" alt="smileImage" class="navbarImage">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <h2> UserName </h2>
+                <p><a class="link-opacity-100" href="#">settings</a></p>
+                <p><a class="link-opacity-100" href="#">Log Out</a></p>
+            </div>
+        </div>
+    </nav>
+    <script>src = "../static/js/bootstrap.js/"</script>
 </body>
+
+</html>
