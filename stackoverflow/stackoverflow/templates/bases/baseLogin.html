@@ -1,0 +1,33 @@
+{% extends 'bases/rightBar.html' %}
+{% load static %}
+{% load static %}
+{% block title %}Список заказов{% endblock %}
+
+{% block navbar %}
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"> <!-- отвечает за отображение nav bar -->
+        <div class="container-fluid"> <!-- отвечает за контейнер внутри nav bar -->
+            <img src="../static/images/stackoverflowIcon.png" alt="stackoverflowIcon" class="navbarImage">
+
+            <h3 class="">MyStackoverflow</h3>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">ASK</button>
+            </form>
+
+            <div class="d-flex align-items-center">
+                <img src="../static/images/smile.jpeg" alt="smileImage" class="navbarImage">
+
+                <div class="pe-5" id="navbarSupportedContent">
+                    <h2> UserNamfe </h2>
+                    <p><a class="link-opacity-75-hover me-2" href="/settings">settings</a>
+                        <a class="link-opacity-75-hover" href="#">log out</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+{% endblock %}

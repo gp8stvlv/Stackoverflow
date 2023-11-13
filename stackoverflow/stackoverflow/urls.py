@@ -26,7 +26,9 @@ urlpatterns = [
     path('tag/', views.tag),
     path('settings/', views.settings), # во 2 не нужно
     path('login/', views.login),
-    path('signup/', views.register)
+    path('signup/', views.register),
+    path('hot/', views.hot),
+    
      #нужна страница hot/
 ]
 

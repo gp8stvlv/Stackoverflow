@@ -1,18 +1,13 @@
 <!-- Страница листинга вопросов -->
-{% extends 'catalogQuestions.html' %} <!-- показывает откуда наследуемся -->
+{% extends 'bases/baseCatalogList.html' %} <!-- показывает откуда наследуемся -->
 {% load static %}
 {% block title %}Список заказов{% endblock %}
 
 {% block body %}
-<!doctype html>
-<html lang="en" class="h-100">
 
-<body>
-    <div class="question-a-h">
-        <h1>New question</h1>
-        <a class="link-opacity-75-hover question-hot" href="#">Hot questions</a>
-    </div>
-</body>
+<div class="question-a-h">
+    <h1>New question</h1>
+    <a class="link-opacity-75-hover question-hot" href="/hot">Hot questions</a>
+</div>
 
-</html>
 {% endblock %}

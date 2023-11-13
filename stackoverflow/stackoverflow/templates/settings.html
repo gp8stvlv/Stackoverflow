@@ -1,42 +1,41 @@
 <!-- Страница пользователя с настройками -->
-{% extends 'base.html' %} <!-- показывает откуда наследуемся -->
+{% extends 'bases/baseLogin.html' %} <!-- показывает откуда наследуемся -->
 {% load static %}
 {% block title %}Список заказов{% endblock %}
 
 {% block content %}
 
-<body>
-    <h1>Settings: Dr. Pepper</h1>
-    <div class="row">
-        <div class="col-3">
-            <div class="col-4">
-                <div class="settings-titles-Login">Login</div>
-                <div class="settings-titles-Email">Email</div>
-                <div class="settings-titles-NickName">NickName</div>
-                <div class="settings-titles-avatar">Upload avatar</div>
-            </div>
+<h1>Settings: Dr. Pepper</h1>
+<div class="row">
+    <div class="col-3">
+        <div class="col-4">
+            <div class="settings-titles-Login">Login</div>
+            <div class="settings-titles-Email">Email</div>
+            <div class="settings-titles-NickName">NickName</div>
+            <div class="settings-titles-avatar">Upload avatar</div>
         </div>
-        <div class="col-7">
-            <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1"
-                placeholder="dr_pepper" maxlength="60"></textarea>
-
-            <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1"
-                placeholder="dr_pepper@mail.ru" maxlength="60"></textarea>
-
-            <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1"
-                placeholder="DR___pepper" maxlength="60"></textarea>
-            <img src="../static/images/smile.jpeg" alt="smileImage" class="settings-image">
-
-            <div class="settings-form-group">
-                <textarea class="settings-form-control" id="exampleFormControlTextarea1" rows="1"
-                    placeholder="C://smile.jpeg"></textarea>
-                <button class="settings-btn" id="chooseButton">Choose</button>
-            </div>
-
-            <button class="settings-btn" id="saveButton">Save</button>
-        </div>
-
     </div>
-</body>
+    <div class="col-7">
+        <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1" placeholder="dr_pepper"
+            maxlength="60"></textarea>
+
+        <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1"
+            placeholder="dr_pepper@mail.ru" maxlength="60"></textarea>
+
+        <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1" placeholder="DR___pepper"
+            maxlength="60"></textarea>
+        <img src="../static/images/smile.jpeg" alt="smileImage" class="settings-image">
+
+        <div class="settings-form-group">
+            <textarea class="settings-form-control" id="exampleFormControlTextarea1" rows="1"
+                placeholder="C://smile.jpeg"></textarea>
+            <button class="settings-btn" id="chooseButton">Choose</button>
+        </div>
+
+        <button class="settings-btn" id="saveButton">Save</button>
+    </div>
+
+</div>
+
 
 {% endblock %}

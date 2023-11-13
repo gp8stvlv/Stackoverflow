@@ -21,4 +21,7 @@ def tag(request):
 def question123(request):
     return render(request, 'question123.html')
 
+def hot(request):
+    return render(request, 'hot.html')
+
 

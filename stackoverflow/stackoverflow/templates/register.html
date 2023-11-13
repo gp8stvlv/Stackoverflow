@@ -1,45 +1,41 @@
 <!-- Страница регистрации -->
-{% extends 'navbarLogIn.html' %} <!-- показывает откуда наследуемся -->
+{% extends 'bases/baseLogout.html' %} <!-- показывает откуда наследуемся -->
 {% load static %}
 {% block title %}Список заказов{% endblock %}
 
 {% block content %}
 
-<body>
-    <h1>Registration</h1>
-    <p class="error-text">Sorry, the email adress already registred!</p>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="col-md-4">
-                <div class="signup-titles-login">Login</div>
-                <div class="signup-titles-Email">Email</div>
-                <div class="signup-titles-NickName">NickName</div>
-                <div class="signup-titles-password">Password</div>
-                <div class="signup-titles-password">Repeat Password</div>
-                <div class="signup-titles-avatar">Upload avatar</div>
-            </div>
-        </div>
-        <div class="col-md-7">
-            <textarea class="form-control signup-text" rows="1" placeholder="dr_pepper" maxlength="60"></textarea>
-
-            <textarea class="form-control signup-text" rows="1" placeholder="dr_pepper@mail.ru"
-                maxlength="60"></textarea>
-
-            <textarea class="form-control signup-text" rows="1" placeholder="Dr____pepper" maxlength="60"></textarea>
-
-            <textarea class="form-control signup-text" rows="1" placeholder="*********" maxlength="60"></textarea>
-
-            <textarea class="form-control signup-text" rows="1" placeholder="*********" maxlength="60"></textarea>
-
-            <div class="settings-form-group">
-                <textarea class="settings-form-control" id="exampleFormControlTextarea1" rows="1"
-                    placeholder="C://smile.jpeg"></textarea>
-                <button class="settings-btn" id="chooseButton">Choose</button>
-            </div>
-
-            <button class="settings-btn" id="saveButton">Save</button>
+<h1>Registration</h1>
+<p class="error-text">Sorry, the email adress already registred!</p>
+<div class="row">
+    <div class="col-md-3">
+        <div class="col-md-4">
+            <div class="signup-titles-login">Login</div>
+            <div class="signup-titles-Email">Email</div>
+            <div class="signup-titles-NickName">NickName</div>
+            <div class="signup-titles-password">Password</div>
+            <div class="signup-titles-password">Repeat Password</div>
+            <div class="signup-titles-avatar">Upload avatar</div>
         </div>
     </div>
-</body>
+    <div class="col-md-7">
+        <textarea class="form-control signup-text" rows="1" placeholder="dr_pepper" maxlength="60"></textarea>
 
+        <textarea class="form-control signup-text" rows="1" placeholder="dr_pepper@mail.ru" maxlength="60"></textarea>
+
+        <textarea class="form-control signup-text" rows="1" placeholder="Dr____pepper" maxlength="60"></textarea>
+
+        <textarea class="form-control signup-text" rows="1" placeholder="*********" maxlength="60"></textarea>
+
+        <textarea class="form-control signup-text" rows="1" placeholder="*********" maxlength="60"></textarea>
+
+        <div class="settings-form-group">
+            <textarea class="settings-form-control" id="exampleFormControlTextarea1" rows="1"
+                placeholder="C://smile.jpeg"></textarea>
+            <button class="settings-btn" id="chooseButton">Choose</button>
+        </div>
+
+        <button class="settings-btn" id="saveButton">Save</button>
+    </div>
+</div>
 {% endblock %}

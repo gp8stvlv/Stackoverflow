@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <link href="../static/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    {% block navbar %}
+
+    {% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+            <div class="col-3">
+                <div class="mt-4"></div>
+
+                <h2> Popular Tags </h2>
+                <a href="/tag/" class="badge bg-primary  me-2">perl</a>
+                <a href="/tag/" class="badge bg-secondary  me-2">python</a>
+                <a href="/tag/" class="badge bg-success">techopark</a>
+                <br>
+                <a href="/tag/" class="badge bg-danger me-3">mySQL</a>
+                <a href="/tag/" class="badge bg-dark">django</a>
+                <br>
+                <a href="/tag/" class="badge bg-success">Mail.ru</a>
+                <a href="/tag/" class="badge bg-danger me-2">Voloshin</a>
+                <a href="/tag/" class="badge bg-primary">FireFox</a>
+
+                <div class="mt-4"></div>
+                <h2> Best Members </h2>
+                <p>
+                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
+                    <br>
+                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
+                    <br>
+                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
+                    <br>
+                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
+                    <br>
+                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>src = "../static/js/bootstrap.js/"</script>
+</body>
+
+</html>
