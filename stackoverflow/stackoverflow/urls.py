@@ -20,5 +20,20 @@ from stackoverflow import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('base/', views.Getbase),
+    path('', views.questionList),
+    path('ask/', views.ask),
+    path('question123/', views.question123),
+    path('tag/', views.tag),
+    path('settings/', views.settings), # во 2 не нужно
+    path('login/', views.login),
+    path('signup/', views.register)
+     #нужна страница hot/
 ]
+
+# cписок новых вопросов (главная страница) (URL = /)
+# cписок “лучших” вопросов (URL = /hot/)
+# cписок вопросов по тэгу (URL = /tag/blablabla/)
+# cтраница одного вопроса со списком ответов (URL = /question/35/)
+# форма логина (URL = /login/)
+# форма регистрации (URL = /signup/)
+# форма создания вопроса (URL = /ask/)

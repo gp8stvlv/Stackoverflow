@@ -1,0 +1,151 @@
+<!-- Страница листинга вопросов -->
+{% extends 'base.html' %} <!-- показывает откуда наследуемся -->
+{% load static %}
+{% block title %}Список заказов{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="question-a-h">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+    <style>
+        .question123-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .question123-body {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .question123-tegs {
+            font-style: italic;
+            color: #555;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 5px;
+            /* Расстояние между чекбоксом и текстом */
+        }
+
+        .question123 {
+            margin-top: 50px;
+            width: 100%;
+            height: 300px;
+        }
+
+        .question123-btn {
+            display: inline-block;
+            padding: 4px 14px;
+            margin-left: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+    </style>
+    <div>
+        <div class="row question123-content">
+            <div class="col-3">
+                <img src="../static/images/smile.jpeg" alt="smileImage" class="question-image">
+                <div class="question-like">
+                    <button>like</button>
+                    <span id="likeCounter">5</span> Likes
+                    <button>dislike</button>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="question123-title">
+                    How can I efficiently handle large datasets in Python using pandas?
+                </div>
+                <div class="question123-body">
+                    I am currently working on a project that involves processing large datasets in Python using the
+                    pandas library. As the dataset size increases, I've noticed a significant slowdown in performance. I
+                    want to optimize my code to handle large datasets more efficiently. Are there any best practices or
+                    specific techniques I can employ to enhance the performance of pandas when dealing with large
+                    amounts of data? Additionally, I would appreciate any recommendations for alternative libraries or
+                    approaches that are well-suited for handling large datasets in Python.
+                </div>
+                <div class="question123-tegs">
+                    Tegs:
+                    <a href="">python, pandas, data-processing, performance-optimization, large-datasets</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row question">
+            <div class="col-3">
+                <img src="../static/images/smile.jpeg" alt="smileImage" class="question-image">
+                <div class="question-like">
+                    <button>like</button>
+                    <span id="likeCounter">5</span> Likes
+                    <button>dislike</button>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="question-title">
+                    <a href="">First question</a>
+                </div>
+                <div class="question-text">
+                    Empowering the world to develop technology through collective knowledge.
+                    Our public platform serves millions of people every month, making it one of the most popular
+                    websites in the world.
+                    Our asynchronous knowledge management and collaboration offering, Stack Overflow for Teams, is
+                    transforming how people work.
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="correct-checkbox">
+                    <label for="correct-checkbox">Correct!</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row question">
+            <div class="col-3">
+                <img src="../static/images/smile.jpeg" alt="smileImage" class="question-image">
+                <div class="question-like">
+                    <button>like</button>
+                    <span id="likeCounter">5</span> Likes
+                    <button>dislike</button>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="question-title">
+                    <a href="">First question</a>
+                </div>
+                <div class="question-text">
+                    Empowering the world to develop technology through collective knowledge.
+                    Our public platform serves millions of people every month, making it one of the most popular
+                    websites in the world.
+                    Our asynchronous knowledge management and collaboration offering, Stack Overflow for Teams, is
+                    transforming how people work.
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="correct-checkbox">
+                    <label for="correct-checkbox">Correct!</label>
+                </div>
+            </div>
+        </div>
+
+        <textarea class="form-control question123" rows="1" placeholder="enter your answer here"></textarea>
+        <button class="question123-btn" id="saveButton">Save</button>
+    </div>
+</body>
+
+</html>
+{% endblock %}

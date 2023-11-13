@@ -1,16 +1,24 @@
 from django.shortcuts import render
 
-def Getbase(request):
-    return render(request, 'base.html')
-
 def ask(request):
-    return render(request, 'index.html')
+    return render(request, 'ask.html')
 
 def login(request):
-    return render(request, 'index.html')
+    return render(request, 'login.html')
 
-def question(request):
-    return render(request, 'index.html')
+def register(request):
+    return render(request, 'register.html')
 
-def signup(request):
-    return render(request, 'index.html')
+def questionList(request):
+    return render(request, 'questionList.html')
+
+def settings(request):
+    return render(request, 'settings.html')
+
+def tag(request):
+    return render(request, 'tag.html')
+
+def question123(request):
+    return render(request, 'question123.html')
+
+

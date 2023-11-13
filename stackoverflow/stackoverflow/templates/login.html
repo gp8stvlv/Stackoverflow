@@ -1,0 +1,31 @@
+<!-- Страница авторизации -->
+{% extends 'navbarLogIn.html' %} <!-- показывает откуда наследуемся -->
+{% load static %}
+{% block title %}Список заказов{% endblock %}
+
+{% block content %}
+
+<body>
+    <h1>Log In</h1>
+    <p class="error-text">Sorry, wrong password!</p>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="col-md-4">
+                <div class="login-titles-login">Login</div>
+                <div class="login-titles-password">Password</div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <textarea class="form-control login-text" rows="1" placeholder="enter your login here"
+                maxlength="60"></textarea>
+
+            <textarea class="form-control login-text" rows="1" placeholder="*********" maxlength="60"></textarea>
+
+            <button class="login-btn" id="saveButton">Log In!</button>
+            <br>
+            <a class="login-a" href="#">create a new account!</a>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<!-- Страница листинга вопросов -->
+{% extends 'catalogQuestions.html' %} <!-- показывает откуда наследуемся -->
+{% load static %}
+{% block title %}Список заказов{% endblock %}
+
+{% block body %}
+<!doctype html>
+<html lang="en" class="h-100">
+<style>
+    .tag-a-h {
+        display: flex;
+    }
+
+    .tag-a-h h1,
+    .tag-a-h h2 {
+        margin: 1px;
+    }
+
+    .tag-a-h h2 {
+        margin-top: 9px;
+        margin-left: 40px;
+    }
+</style>
+
+<body>
+    <div class="tag-a-h">
+        <h1>Tag:</h1>
+        <h2>Bender</h2>
+    </div>
+
+
+</body>
+
+</html>
+{% endblock %}

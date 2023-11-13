@@ -1,4 +1,333 @@
+.question {
+    border: 2px solid gray;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.question-image {
+    width: 100px;
+    height: 100px;
+}
+
+.question-like {
+    margin-top: 10px;
+
+}
+
+.question-tag-container {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.question-tag-container,
+.question-tag-container a {
+    margin-right: 100px;
+}
+
+
+.question-like button {
+    background-color: #d7e5ff;
+    border: none;
+    color: #194dae;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.question-like button:hover {
+    background-color: #194dae;
+    color: #ffffff;
+}
+
+.question-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.question-hot {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.question-text {
+    font-size: 18px;
+    color: rgb(57, 57, 57);
+    font-family: Georgia;
+    margin-bottom: 20px;
+}
+
 .navbarImage {
     width: 100px;
     height: 100px;
+}
+
+
+.question-a-h h1,
+.question-a-h a {
+    display: inline-block;
+    margin-right: 20px;
+
+    /* Убедимся, что отступы по умолчанию убраны */
+}
+
+/* .tag-a-h {
+    display: flex;
+}
+
+.tag-a-h h1,
+.tag-a-h h2 {
+    margin: 1px;
+}
+
+.tag-a-h h2 {
+    margin-top: 9px;
+    margin-left: 40px;
+} */
+
+
+.ask-new-question {
+    margin-left: 45px;
+}
+
+
+.ask {
+    border: 2px solid gray;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 20px;
+    height: 70px;
+    /* Set a fixed height */
+    overflow: hidden;
+    /* Hide overflow content if it exceeds the fixed height */
+}
+
+.ask-titles-title,
+.ask-titles-text,
+.ask-titles-tags {
+    font-weight: bolder;
+    margin-left: 60px;
+    font-size: 30px;
+}
+
+.ask-titles-title {
+    margin-top: 40px;
+}
+
+.ask-titles-text {
+    margin-top: 60px;
+}
+
+.ask-titles-tags {
+    margin-top: 280px;
+}
+
+.ask-text {
+    font-size: 18px;
+    color: rgb(57, 57, 57);
+    font-family: Georgia;
+    margin-bottom: 20px;
+}
+
+.ask-button button {
+    background-color: #0e5ff6;
+    border: none;
+    color: #ffffff;
+    padding: 15px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.7s ease;
+    /* Added transition for transform */
+}
+
+.ask-button button:hover {
+    background-color: rgb(81, 131, 225);
+    color: #ffffff;
+    transform: scale(1.2);
+    /* Increase the size on hover */
+}
+
+.pagination {
+    margin-top: 50px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    margin-right: 5px;
+}
+
+.pagination a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #333;
+}
+
+
+.settings-titles-Login,
+.settings-titles-Email,
+.settings-titles-NickName,
+.settings-titles-avatar {
+    font-size: 25px;
+}
+
+.settings-titles-Login {
+    margin-top: 10px;
+}
+
+.settings-titles-Email {
+    margin-top: 20px;
+}
+
+.settings-titles-NickName {
+    margin-top: 20px;
+}
+
+.settings-titles-avatar {
+    margin-top: 25px;
+}
+
+
+.settings-text {
+    border: 2px solid gray;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+
+.settings-image {
+    width: 200px;
+    height: 200px;
+    margin-top: 5px;
+}
+
+.settings-text-route {
+    border: 2px solid gray;
+    margin-top: 8px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 300px;
+}
+
+.settings-form-group {
+    margin-bottom: 15px;
+}
+
+.settings-form-control {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.settings-btn {
+    display: inline-block;
+    padding: 4px 14px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+
+.login-titles-login,
+.login-titles-password {
+    font-weight: bold;
+}
+
+
+.login-titles-login {
+    margin-top: 0px;
+}
+
+.login-titles-password {
+    margin-top: 25px;
+}
+
+.login-text {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.error-text {
+    color: red;
+}
+
+.login-a {
+    margin-top: 30px;
+    color: #007bff;
+    display: block;
+}
+
+
+
+
+.signup-titles-login,
+.signup-titles-Email,
+.signup-titles-NickName,
+.signup-titles-avatar,
+.signup-titles-password {
+    font-weight: bold;
+    width: 200px;
+}
+
+
+.signup-titles-login {
+    margin-top: 0px;
+}
+
+.signup-titles-Email,
+.signup-titles-NickName,
+.signup-titles-avatar,
+.signup-titles-password {
+    margin-top: 25px;
+}
+
+.signup-text {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.signup-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.signup-a {
+    margin-top: 30px;
+    color: #007bff;
+    display: block;
 }
