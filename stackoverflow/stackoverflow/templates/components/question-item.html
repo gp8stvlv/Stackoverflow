@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="row question">
+    <div class="col-3">
+        <img src="{% static '/images/smile.jpeg'%}" alt="smileImage" class="question-image">
+        <div class="question-like">
+            <button>up</button>
+            <span id="likeCounter">{{ question.like_count }}</span>
+            <button>down</button>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="question-title">
+            <a href="{% url 'question' question.id %}">{{ question.title }}</a>
+        </div>
+        <div class="question-text">
+            {{ question.body }}
+        </div>
+
+        <a class="question-tag-container" href="{% url 'question' question.id %}">answer {{ question.answer_count }}</a>
+        Tags:
+        <a href="{% url 'tag' question.tags %}">{{ question.tags }}</a>
+
+    </div>
+</div>

@@ -1,17 +1,31 @@
-<!-- Страница листинга вопросов -->
-{% extends 'bases/baseCatalogList.html' %} <!-- показывает откуда наследуемся -->
+{% extends 'layout/base.html' %} <!-- показывает откуда наследуемся -->
 {% load static %}
-{% block title %}Список заказов{% endblock %}
 
-{% block body %}
+{% block content %}
 
 <div class="mytag-a-h">
     <div class="mytagh1">
         <h1>Tag:</h1>
     </div>
     <div class="mytagh2">
-        <h2>Bender</h2>
+        <h2>{{tag.name}}</h2>
     </div>
+</div>
+
+<div>
+    {% for question in questions %}
+
+    {% include 'components/question-item.html'%}
+
+    {% endfor %}
+
+    <ul class="pagination">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">...</a></li>
+        <li><a href="#">56</a></li>
+    </ul>
 </div>
 
 {% endblock %}

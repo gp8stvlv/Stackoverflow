@@ -1,0 +1,44 @@
+{% load static %}
+<div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"> <!-- отвечает за отображение nav bar -->
+        <div class="container-fluid"> <!-- отвечает за контейнер внутри nav bar -->
+            <img src="{% static '/images/stackoverflowIcon.png'%}" alt="stackoverflowIcon" class="navbarImage">
+
+            <h2 class="">MyStackoverflow</h2>
+
+            <h5 class="">
+                <a href="{% url 'new_questions' %}" class="MyStackoverflow">New questions</a>
+            </h5>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">ASK</button>
+            </form>
+
+            {% if is_auth == True %}
+
+            <div class="d-flex align-items-center">
+                <img src="{% static '/images/smile.jpeg' %}" alt="smileImage" class="navbarImage">
+
+                <div class="pe-5" id="navbarSupportedContent">
+                    <h2> UserNamfe </h2>
+                    <p><a class="link-opacity-75-hover me-2" href="{% url 'settings' %}">settings</a>
+                        <a class="link-opacity-75-hover" href="#">log out</a>
+                    </p>
+                </div>
+            </div>
+
+            {% else %}
+
+            <div class="pe-5" id="navbarSupportedContent">
+
+                <p><a class="link-opacity-75-hover me-2" href="{% url 'login' %}">log in</a>
+                    <a class="link-opacity-75-hover" href="{% url 'register' %}">register</a>
+                </p>
+            </div>
+
+            {% endif %}
+
+        </div>
+    </nav>
+</div>

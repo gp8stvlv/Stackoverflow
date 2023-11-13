@@ -1,7 +1,5 @@
-<!-- Страница пользователя с настройками -->
-{% extends 'bases/baseLogin.html' %} <!-- показывает откуда наследуемся -->
+{% extends 'layout/base.html' %} <!-- показывает откуда наследуемся -->
 {% load static %}
-{% block title %}Список заказов{% endblock %}
 
 {% block content %}
 
@@ -24,7 +22,7 @@
 
         <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1" placeholder="DR___pepper"
             maxlength="60"></textarea>
-        <img src="../static/images/smile.jpeg" alt="smileImage" class="settings-image">
+        <img src="{% static '/images/smile.jpeg'%}" alt="smileImage" class="settings-image">
 
         <div class="settings-form-group">
             <textarea class="settings-form-control" id="exampleFormControlTextarea1" rows="1"
@@ -36,6 +34,4 @@
     </div>
 
 </div>
-
-
 {% endblock %}

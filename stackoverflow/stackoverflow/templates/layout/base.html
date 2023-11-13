@@ -3,15 +3,13 @@
 <html lang="en" class="h-100">
 
 <head>
-    <link href="../static/css/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="../static/css/main.css" rel="stylesheet">
+    <link href="{% static '/css/bootstrap/bootstrap.css'%}" rel="stylesheet">
+    <link href="{% static '/css/main.css'%}" rel="stylesheet">
     <meta charset="utf-8">
 </head>
 
 <body>
-    {% block navbar %}
-
-    {% endblock %}
+    {% include 'components/navbar.html'%}
     <div class="container">
         <div class="row">
             <div class="col-9">
@@ -23,6 +21,15 @@
                 <div class="mt-4"></div>
 
                 <h2> Popular Tags </h2>
+
+
+                {% for tag in POPULAR_TAGS %}
+                <a href="{% url 'tag' tag.name %}" class="badge bg-dark">{{ tag.name }}</a>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                <br>
+                {% endif %}
+                {% endfor %}
+                <!-- 
                 <a href="/tag/" class="badge bg-primary  me-2">perl</a>
                 <a href="/tag/" class="badge bg-secondary  me-2">python</a>
                 <a href="/tag/" class="badge bg-success">techopark</a>
@@ -32,25 +39,23 @@
                 <br>
                 <a href="/tag/" class="badge bg-success">Mail.ru</a>
                 <a href="/tag/" class="badge bg-danger me-2">Voloshin</a>
-                <a href="/tag/" class="badge bg-primary">FireFox</a>
-
+                <a href="/tag/" class="badge bg-primary">FireFox</a> -->
                 <div class="mt-4"></div>
                 <h2> Best Members </h2>
+
                 <p>
-                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
+                    {% for member in BEST_MEMBERS %}
+                    <a href="" class="link-opacity-75-hover">{{ member.name }}</a>
+                    {% if not forloop.last %}
                     <br>
-                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
-                    <br>
-                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
-                    <br>
-                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
-                    <br>
-                    <a class="link-opacity-75-hover" href="#">Mr. Freeman</a>
+                    {% endif %}
+                    {% endfor %}
                 </p>
+
             </div>
         </div>
     </div>
-    <script>src = "../static/js/bootstrap.js/"</script>
+    <script>src = "{%static '/js/bootstrap.js/'%}"</script>
 </body>
 
 </html>

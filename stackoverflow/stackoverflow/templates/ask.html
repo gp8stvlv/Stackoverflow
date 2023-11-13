@@ -1,7 +1,5 @@
-<!--  Страница добавления вопроса -->
-{% extends 'bases/baseLogout.html' %} <!-- показывает откуда наследуемся -->
+{% extends 'layout/base.html' %} <!-- показывает откуда наследуемся -->
 {% load static %}
-{% block title %}Список заказов{% endblock %}
 
 {% block content %}
 
@@ -24,13 +22,11 @@
         <textarea class="form-control signup-text ask ask-text" rows="1"
             placeholder="python, pandas, data-processing, performance-optimization, large-datasets"></textarea>
 
-        <div class=" ask-button">
+        <div class="ask-button">
             <button>ASK!</button>
         </div>
 
     </div>
 </div>
-
-
 
 {% endblock %}

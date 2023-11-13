@@ -1,0 +1,65 @@
+{% extends 'layout/base.html' %} <!-- показывает откуда наследуемся -->
+{% load static %}
+
+{% block content %}
+
+<div>
+    <div class="row question123-content">
+        <div class="col-3">
+            <img src="{% static '/images/smile.jpeg'%}" alt="smileImage" class="question-image">
+            <div class="question-like">
+                <button>up</button>
+                <span id="likeCounter">5</span>
+                <button>down</button>
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div class="question123-title">
+                {{ questions.title }}
+            </div>
+            <div class="question123-body">
+                {{ questions.body }}
+            </div>
+
+            <div class="question123-tegs">
+                Tegs:
+                {% for tag in POPULAR_TAGS %}
+                <a href="{% url 'tag' tag.name %}">{{ tag.name }}</a>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% for answer in ANSWERS %}
+    <div class="row question">
+        <div class="col-3">
+            <img src="{% static '/images/smile.jpeg'%}" alt="smileImage" class="question-image">
+            <div class="question-like">
+                <button>up</button>
+                <span id="likeCounter">5</span>
+                <button>down</button>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="question-title">
+                <a href="">{{ answer.title }}</a>
+            </div>
+            <div class="question-text">
+                {{ answer.body }}
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="correct-checkbox" {% if answer.is_correct %}checked{% endif %}>
+                <label for="correct-checkbox">Correct!</label>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <textarea class="form-control question123" rows="1" placeholder="enter your answer here"></textarea>
+    <button class="question123-btn" id="saveButton">Save</button>
+</div>
+
+</html>
+{% endblock %}

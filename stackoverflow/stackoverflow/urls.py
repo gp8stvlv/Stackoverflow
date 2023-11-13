@@ -20,22 +20,13 @@ from stackoverflow import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.questionList),
-    path('ask/', views.ask),
-    path('question123/', views.question123),
-    path('tag/', views.tag),
-    path('settings/', views.settings), # во 2 не нужно
-    path('login/', views.login),
-    path('signup/', views.register),
-    path('hot/', views.hot),
-    
-     #нужна страница hot/
+    path('', views.questionList, name = 'new_questions'),
+    path('ask/', views.ask, name = 'ask'),
+    path('question/<int:question_id>', views.question, name = 'question'),
+    path('tag/<str:tag_name>/', views.tag, name='tag'),
+    path('settings/', views.settings, name = 'settings'),
+    path('login/', views.login, name = 'login'),
+    path('signup/', views.register, name = 'register'),
+    path('hot/', views.hot, name = 'hot'),
 ]
-
-# cписок новых вопросов (главная страница) (URL = /)
-# cписок “лучших” вопросов (URL = /hot/)
-# cписок вопросов по тэгу (URL = /tag/blablabla/)
-# cтраница одного вопроса со списком ответов (URL = /question/35/)
-# форма логина (URL = /login/)
-# форма регистрации (URL = /signup/)
-# форма создания вопроса (URL = /ask/)
+# name нужен для передачи ссылке (чтобы не /blabla/{{id}}), а по названию передавать (чтобы можно было менять route не меняя ссылку каждый раз)

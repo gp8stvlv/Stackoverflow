@@ -1,7 +1,5 @@
-<!-- Страница авторизации -->
-{% extends 'bases/baseLogout.html' %} <!-- показывает откуда наследуемся -->
+{% extends 'layout/base.html' %} <!-- показывает откуда наследуемся -->
 {% load static %}
-{% block title %}Список заказов{% endblock %}
 
 {% block content %}
 
@@ -22,7 +20,7 @@
 
         <button class="login-btn" id="saveButton">Log In!</button>
         <br>
-        <a class="login-a" href="/signup">create a new account!</a>
+        <a class="login-a" href="{% url 'register' %}">create a new account!</a>
     </div>
 </div>
 
