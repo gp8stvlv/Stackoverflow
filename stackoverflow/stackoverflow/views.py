@@ -1,5 +1,5 @@
 import random
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 IS_AUTH = True
@@ -53,6 +53,8 @@ QUESTIONS = [
     } for i in range(50)
 ]
 
+
+
 def paginate(objects, request, per_page=3):
     try:
         current_page = int(request.GET.get('page', 1))
@@ -76,6 +78,13 @@ def popular_tags():
 def get_tag_by_name(tag_name):
     return {tag['name']: tag for tag in TAGS}.get(tag_name)
 
+def question(request, question_id):
+    item = QUESTIONS[question_id]
+    return render(request, 'question.html',  context={'questions': item,
+                                                       'is_auth': False, 
+                                                       'POPULAR_TAGS': popular_tags(),
+                                                        'ANSWERS': ANSWERS})
+
 def tag(request, tag_name):
     tag_request = get_tag_by_name(tag_name)
     tagged_questions = [question for question in QUESTIONS if tag_name in question['tags']]
@@ -95,13 +104,6 @@ def questionList(request):
         'is_auth': True,
         'POPULAR_TAGS': popular_tags()
     })
-
-def question(request, question_id):
-    item = QUESTIONS[question_id]
-    return render(request, 'question.html',  context={'questions': item,
-                                                       'is_auth': False, 
-                                                       'POPULAR_TAGS': popular_tags(),
-                                                        'ANSWERS': ANSWERS})
 
 def ask(request):
     return render(request, 'ask.html', context= {'is_auth': False,
