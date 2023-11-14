@@ -122,6 +122,6 @@ def settings(request):
 def hot(request):
     all_questions = QUESTIONS
     page_items = paginate(all_questions, request, per_page=5)
-    return render(request, 'hot.html', context={'questions': all_questions,
+    return render(request, 'hot.html', context={'questions': page_items,
                                                  'is_auth': False,
                                                    'POPULAR_TAGS': popular_tags()})
