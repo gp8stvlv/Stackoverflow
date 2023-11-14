@@ -8,24 +8,26 @@
         <h1>Tag:</h1>
     </div>
     <div class="mytagh2">
-        <h2>{{tag.name}}</h2>
+        <h2>{{ tag.name }}</h2>
     </div>
 </div>
 
 <div>
     {% for question in questions %}
-
-    {% include 'components/question-item.html'%}
-
+    {% if tag.name in question.tags %}
+    {% include 'components/question-item.html' %}
+    {% endif %}
     {% endfor %}
 
     <ul class="pagination">
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">...</a></li>
-        <li><a href="#">56</a></li>
+        {% for page_num in questions.paginator.page_range %}
+        <li class="{% if page_num == questions.number %}active{% endif %}">
+            <a href="?page={{ page_num }}">{{ page_num }}</a>
+        </li>
+        {% endfor %}
     </ul>
+
+
 </div>
 
 {% endblock %}
