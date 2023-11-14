@@ -19,13 +19,8 @@
     {% endif %}
     {% endfor %}
 
-    <ul class="pagination">
-        {% for page_num in questions.paginator.page_range %}
-        <li class="{% if page_num == questions.number %}active{% endif %}">
-            <a href="?page={{ page_num }}">{{ page_num }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+
+    {% include 'components/pagination.html'%}
 
 
 </div>

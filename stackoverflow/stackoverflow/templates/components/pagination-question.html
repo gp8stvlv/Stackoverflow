@@ -1,0 +1,38 @@
+{% load static %}
+<div class="pagination-margin">
+    <div class="pagination">
+        <ul class="pagination-list">
+            {% if questions.has_previous %}
+            <li>
+                <a href="?page=1" aria-label="First">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                </a>
+            </li>
+            <li>
+                <a href="?page={{ questions.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% endif %}
+
+            <li class="active">
+                <a href="?page={{ questions.number }}" aria-label="Current Page">
+                    <span class="page-number">{{ questions.number }}</span>
+                </a>
+            </li>
+
+            {% if questions.has_next %}
+            <li>
+                <a href="?page={{ questions.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li>
+                <a href="?page={{ questions.paginator.num_pages }}" aria-label="Last">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
