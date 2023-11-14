@@ -14,7 +14,7 @@ ANSWERS = [
                 Our asynchronous knowledge management and collaboration offering, Stack Overflow for Teams, is
                 transforming how people work.""",
             'is_correct': True
-        }  for i in range(5)
+        }  for i in range(10)
 ]
 
 TAGS = [
@@ -80,10 +80,12 @@ def get_tag_by_name(tag_name):
 
 def question(request, question_id):
     item = QUESTIONS[question_id]
-    return render(request, 'question.html',  context={'questions': item,
+    page_items = paginate(ANSWERS, request, per_page=3)
+    return render(request, 'question_item.html', context={'questions': item,
                                                        'is_auth': False, 
                                                        'POPULAR_TAGS': popular_tags(),
-                                                        'ANSWERS': ANSWERS})
+                                                       'ANSWERS': page_items})
+
 
 def tag(request, tag_name):
     tag_request = get_tag_by_name(tag_name)
@@ -95,11 +97,11 @@ def tag(request, tag_name):
                                                    'is_auth': True,
                                                    'POPULAR_TAGS': popular_tags()})
 
-def questionList(request):
+def question_list(request):
     all_questions = QUESTIONS
     page_items = paginate(all_questions, request, per_page=5)
 
-    return render(request, 'questionList.html', context={
+    return render(request, 'question_list.html', context={
         'questions': page_items,
         'is_auth': True,
         'POPULAR_TAGS': popular_tags()
