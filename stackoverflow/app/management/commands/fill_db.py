@@ -66,24 +66,30 @@ class Command(BaseCommand):
 
         self.stdout.write("Questions filled\n")
 
+        # Create Answers
+        answers = [
+            Answer(
+                body=fake.text()[:5],
+                create_date=fake.date_time_this_decade(),
+                is_correct=random.choice([True, False]),
+                profile=random.choice(Profile.objects.all()),
+                question=random.choice(Question.objects.all())
+            )
+            for _ in range(answers_count)
+        ]
+
+        Answer.objects.bulk_create(answers)
+        self.stdout.write("Answers filled\n")
+
         # Create Likes
-        for i in range(likes_count):
-            Like.objects.create(
+        likes = [
+            Like(
                 type=random.choice(['+', '-']),
                 profile=random.choice(Profile.objects.all()),
                 question=random.choice(Question.objects.all())
             )
+            for _ in range(likes_count)
+        ]
 
-        self.stdout.write(self.style.SUCCESS(f'Successfully filled the database with test data.'))
-
-        # Create Answers
-        for i in range(answers_count):
-                answer = Answer.objects.create(
-                    body=fake.text()[:5],
-                    create_date=fake.date_time_this_decade(),
-                    is_correct=random.choice([True, False]),
-                    profile=random.choice(Profile.objects.all()),
-                    question=random.choice(Question.objects.all())
-                )
-
-        self.stdout.write("Answers filled\n")
+        Like.objects.bulk_create(likes)
+        self.stdout.write(self.style.SUCCESS(f'Likes filled'))

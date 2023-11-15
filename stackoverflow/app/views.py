@@ -23,7 +23,7 @@ def paginate(objects, request, per_page=3):
     return page_items
 
 def question_list(request):
-    all_questions = models.Question.objects.all()
+    all_questions = models.Question.objects.answers_and_likes()
     page_items = paginate(all_questions, request, per_page=30)
 
 
@@ -34,12 +34,12 @@ def question_list(request):
     })
 
 def hot(request):
-    hot_questions = models.Question.objects.sort_by_answers_count()
+    hot_questions = models.Question.objects.sort_by_rating()
     page_items = paginate(hot_questions, request, per_page=30)
 
     return render(request, 'hot.html', context={'questions': page_items,
-                                                 'is_auth': False,
-                                                   'POPULAR_TAGS': TAG_TOP_TITLES})
+                                                'is_auth': False,
+                                                'POPULAR_TAGS': TAG_TOP_TITLES})
 
 def ask(request):
     return render(request, 'ask.html', context= {'is_auth': False,
@@ -51,7 +51,7 @@ def login(request):
 
 def register(request):
     return render(request, 'register.html', context= {'is_auth': False,
-                                                       'POPULAR_TAGS': TAG_TOP_TITLES})
+                                                      'POPULAR_TAGS': TAG_TOP_TITLES})
 
 def settings(request):
     return render(request, 'settings.html', context= {'is_auth': True,
@@ -73,8 +73,8 @@ def tag(request, tag_name):
     page_items = paginate(models.Question.objects.get_by_tag(tag_name), request, per_page=20)
     return render(request, 'tag.html', context={'tag': tag_name,
                                                  'questions': page_items,
-                                                   'is_auth': True,
-                                                   'POPULAR_TAGS': TAG_TOP_TITLES})
+                                                 'is_auth': True,
+                                                 'POPULAR_TAGS': TAG_TOP_TITLES})
 
 
 

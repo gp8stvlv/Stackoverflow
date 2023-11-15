@@ -15,7 +15,7 @@ class Profile(models.Model):
     objects = ProfileManager()
 
     def __str__(self):
-        return f'{self.user.username} - Rating: {self.rating}' #Этот метод выводит строку, представляющую профиль пользователя, включая имя пользователя и рейтинг.
+        return f'{self.user.username} - Rating: {self.rating}'
 
 class TagManager(models.Manager):
     def get_top_five_tags(self):
@@ -43,13 +43,13 @@ class QuestionManager(models.Manager):
         return self.order_by('create_date')
     
     def sort_by_rating(self):
-        return self.order_by('rating')
+        return self.annotate(answers_count=Count('answers'), like_count=Count('likes')).order_by('-like_count', '-rating')
     
     def get_by_tag(self, tag_title):
-        return self.filter(tags__title=tag_title)
+        return self.filter(tags__title=tag_title).annotate(like_count=Count('likes'))
     
-    def sort_by_answers_count(self):
-        return self.annotate(answers_count=Count('answers')).order_by('-answers_count')
+    def answers_and_likes(self):
+        return self.annotate(answers_count=Count('answers'), like_count=Count('likes'))
 
 
 class Question(models.Model):
@@ -63,7 +63,11 @@ class Question(models.Model):
     objects = QuestionManager()
 
     def __str__(self):
-        return f'{self.title} - Rating: {self.rating}'  #Выводит строку, представляющую вопрос, включая заголовок и рейтинг.
+        return f'{self.title} - Rating: {self.rating}'
+
+class AnswerManager(models.Manager): 
+    def get_user_rating(self):
+         return 
 
 class Answer(models.Model):
     body = models.TextField()
@@ -72,8 +76,10 @@ class Answer(models.Model):
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE, related_name='answers')
     question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='answers')
 
+    objects = AnswerManager()
+
     def __str__(self):
-        return f'Answer to "{self.question.title}" by {self.profile.user.username}' #Выводит строку, представляющую ответ, включая заголовок вопроса, к которому относится ответ, и имя пользователя, который дал ответ.
+        return f'Answer to "{self.question.title}" by {self.profile.user.username}' 
 
 class LikeManager(models.Manager):
     def sort_by_rating_and_date(self):
@@ -92,4 +98,4 @@ class Like(models.Model):
     objects = LikeManager()
 
     def __str__(self):
-        return f'{self.profile.user.username} {self.get_type_display()} to "{self.question.title}"' #Выводит строку, представляющую лайк, включая имя пользователя, тип лайка (+ или -) и заголовок вопроса, к которому относится лайк.
+        return f'{self.profile.user.username} {self.get_type_display()} to "{self.question.title}"'
