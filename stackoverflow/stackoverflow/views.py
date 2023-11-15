@@ -98,6 +98,7 @@ def tag(request, tag_name):
                                                    'POPULAR_TAGS': popular_tags()})
 
 def question_list(request):
+
     all_questions = QUESTIONS
     page_items = paginate(all_questions, request, per_page=30)
 

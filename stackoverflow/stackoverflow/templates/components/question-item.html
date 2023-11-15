@@ -21,9 +21,10 @@
         <!-- Tags:
         <a href="{% url 'tag' question.tags %}">{{ question.tags }}</a> -->
         Tags:
-        {% for tag in question.tags %}
+        {% for tag in question.tags.all %}
         <a href="{% url 'tag' tag %}">{{ tag }}</a>
         {% endfor %}
+
 
     </div>
 </div>

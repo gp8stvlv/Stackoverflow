@@ -16,19 +16,19 @@
 
         <div class="col-8">
             <div class="question123-title">
-                {{ questions.title }}
+                {{ question.title }}
             </div>
             <div class="question123-body">
-                {{ questions.body }}
+                {{ question.body }}
             </div>
 
             <div class="question123-tegs">
                 Tegs:
-                {% for tag in POPULAR_TAGS %}
-                <a href="{% url 'tag' tag.name %}">{{ tag.name }}</a>
-
+                {% for tag in ANSWER_TEGS %}
+                <a href="{% url 'tag' tag|lower %}">{{ tag.title }}</a>
                 {% endfor %}
             </div>
+
         </div>
     </div>
 
@@ -56,6 +56,7 @@
         </div>
     </div>
     {% endfor %}
+
     <div>
         {% include 'components/pagination.html' with page_object=ANSWERS %}
     </div>

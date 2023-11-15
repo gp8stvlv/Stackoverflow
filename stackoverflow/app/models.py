@@ -9,7 +9,7 @@ class ProfileManager(models.Manager):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
+    avatar = models.ImageField(upload_to='images/avatars/', null=True, blank=True)
     rating = models.IntegerField(default=0)
 
     objects = ProfileManager()
@@ -19,7 +19,8 @@ class Profile(models.Model):
 
 class TagManager(models.Manager):
     def get_top_five_tags(self):
-        return self.annotate(count=Count('questions')).order_by('-count')[:5]
+        print((Count('questions')))
+        return self.annotate(count=Count('questions')).order_by('count')[:8]
 
     def get_by_question(self, question):
         return self.filter(questions=question)
@@ -43,6 +44,12 @@ class QuestionManager(models.Manager):
     
     def sort_by_rating(self):
         return self.order_by('rating')
+    
+    def get_by_tag(self, tag_title):
+        return self.filter(tags__title=tag_title)
+    
+    def sort_by_answers_count(self):
+        return self.annotate(answers_count=Count('answers')).order_by('-answers_count')
 
 #  сортировка по дате добавления и рейтингу (2 вида сортировки).
 class Question(models.Model):

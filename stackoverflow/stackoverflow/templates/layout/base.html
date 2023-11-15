@@ -23,12 +23,15 @@
                 <h2> Popular Tags </h2>
 
 
+
                 {% for tag in POPULAR_TAGS %}
-                <a href="{% url 'tag' tag.name %}" class="badge bg-dark">{{ tag.name }}</a>
+                <a href="{% url 'tag' tag %}" class="badge bg-dark">{{ tag }}</a>
                 {% if forloop.counter|divisibleby:3 and not forloop.last %}
                 <br>
                 {% endif %}
                 {% endfor %}
+
+
                 <div class="mt-4"></div>
                 <h2> Best Members </h2>
 
