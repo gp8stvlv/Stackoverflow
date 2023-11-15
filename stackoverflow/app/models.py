@@ -28,7 +28,7 @@ class TagManager(models.Manager):
     def get_by_title(self, current_title):
         return self.filter(title=current_title)
 
-#  Сортировка по рейтингу вопроса.
+
 class Tag(models.Model):
     title = models.CharField(max_length=30)
 
@@ -51,7 +51,7 @@ class QuestionManager(models.Manager):
     def sort_by_answers_count(self):
         return self.annotate(answers_count=Count('answers')).order_by('-answers_count')
 
-#  сортировка по дате добавления и рейтингу (2 вида сортировки).
+
 class Question(models.Model):
     title = models.CharField(max_length=40)
     body = models.TextField()
@@ -65,7 +65,6 @@ class Question(models.Model):
     def __str__(self):
         return f'{self.title} - Rating: {self.rating}'  #Выводит строку, представляющую вопрос, включая заголовок и рейтинг.
 
-# Ответы сортируются по рейтингу и дате добавления при равном рейтинге.
 class Answer(models.Model):
     body = models.TextField()
     create_date = models.DateTimeField(auto_now_add=True)
