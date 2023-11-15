@@ -90,7 +90,7 @@ def question(request, question_id):
 def tag(request, tag_name):
     tag_request = get_tag_by_name(tag_name)
     tagged_questions = [question for question in QUESTIONS if tag_name in question['tags']]
-    page_items = paginate(tagged_questions, request, per_page=4)
+    page_items = paginate(tagged_questions, request, per_page=20)
 
     return render(request, 'tag.html', context={'tag': tag_request,
                                                  'questions': page_items,
@@ -99,7 +99,7 @@ def tag(request, tag_name):
 
 def question_list(request):
     all_questions = QUESTIONS
-    page_items = paginate(all_questions, request, per_page=5)
+    page_items = paginate(all_questions, request, per_page=30)
 
     return render(request, 'question_list.html', context={
         'questions': page_items,
@@ -125,7 +125,7 @@ def settings(request):
 
 def hot(request):
     all_questions = QUESTIONS
-    page_items = paginate(all_questions, request, per_page=5)
+    page_items = paginate(all_questions, request, per_page=30)
     return render(request, 'hot.html', context={'questions': page_items,
                                                  'is_auth': False,
                                                    'POPULAR_TAGS': popular_tags()})
