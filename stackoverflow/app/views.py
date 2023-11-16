@@ -26,7 +26,6 @@ def question_list(request):
     all_questions = models.Question.objects.answers_and_likes()
     page_items = paginate(all_questions, request, per_page=30)
 
-
     return render(request, 'question_list.html', context={
         'questions': page_items,
         'is_auth': True,

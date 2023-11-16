@@ -53,8 +53,6 @@ QUESTIONS = [
     } for i in range(50)
 ]
 
-
-
 def paginate(objects, request, per_page=3):
     try:
         current_page = int(request.GET.get('page', 1))

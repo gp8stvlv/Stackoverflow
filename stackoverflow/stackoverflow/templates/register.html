@@ -6,33 +6,40 @@
 <h1>Registration</h1>
 <p class="error-text">Sorry, the email adress already registred!</p>
 <div class="row">
-    <div class="col-md-3">
-        <div class="col-md-4">
+    <div class settings-margin>
+        <div class="col-md-7">
+
             <div class="signup-titles-login">Login</div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="dr_pepper" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" maxlength="30">
+            </div>
             <div class="signup-titles-Email">Email</div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="dr_pepper@mail.ru"
+                    aria-label="Recipient's username" aria-describedby="basic-addon2" maxlength="50">
+            </div>
+
             <div class="signup-titles-NickName">NickName</div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Dr____pepper" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" maxlength="50">
+            </div>
             <div class="signup-titles-password">Password</div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="*********" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" maxlength="50">
+            </div>
             <div class="signup-titles-password">Repeat Password</div>
-            <div class="signup-titles-avatar">Upload avatar</div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="*********" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" maxlength="50">
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Upload avatar</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
         </div>
-    </div>
-    <div class="col-md-7">
-        <textarea class="form-control signup-text" rows="1" placeholder="dr_pepper" maxlength="60"></textarea>
-
-        <textarea class="form-control signup-text" rows="1" placeholder="dr_pepper@mail.ru" maxlength="60"></textarea>
-
-        <textarea class="form-control signup-text" rows="1" placeholder="Dr____pepper" maxlength="60"></textarea>
-
-        <textarea class="form-control signup-text" rows="1" placeholder="*********" maxlength="60"></textarea>
-
-        <textarea class="form-control signup-text" rows="1" placeholder="*********" maxlength="60"></textarea>
-
-        <div class="settings-form-group">
-            <textarea class="settings-form-control" id="exampleFormControlTextarea1" rows="1"
-                placeholder="C://smile.jpeg"></textarea>
-            <button class="settings-btn" id="chooseButton">Choose</button>
-        </div>
-
         <button class="settings-btn" id="saveButton">Save</button>
     </div>
 </div>

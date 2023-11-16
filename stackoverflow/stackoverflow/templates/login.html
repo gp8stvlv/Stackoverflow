@@ -13,11 +13,15 @@
         </div>
     </div>
     <div class="col-md-7">
-        <textarea class="form-control login-text" rows="1" placeholder="enter your login here"
-            maxlength="60"></textarea>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="enter your login here"
+                aria-label="Recipient's username" aria-describedby="basic-addon2" maxlength="50">
+        </div>
 
-        <textarea class="form-control login-text" rows="1" placeholder="*********" maxlength="60"></textarea>
-
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="enter your password here"
+                aria-label="Recipient's username" aria-describedby="basic-addon2" maxlength="50">
+        </div>
         <button class="login-btn" id="saveButton">Log In!</button>
         <br>
         <a class="login-a" href="{% url 'register' %}">create a new account!</a>

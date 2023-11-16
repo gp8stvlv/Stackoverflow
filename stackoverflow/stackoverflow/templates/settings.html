@@ -4,6 +4,7 @@
 {% block content %}
 
 <h1>Settings: Dr. Pepper</h1>
+<p class="error-text">Sorry, the email adress already registred!</p>
 <div class="row">
     <div class="col-3">
         <div class="col-4">
@@ -14,23 +15,28 @@
         </div>
     </div>
     <div class="col-7">
-        <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1" placeholder="dr_pepper"
-            maxlength="60"></textarea>
-
-        <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1"
-            placeholder="dr_pepper@mail.ru" maxlength="60"></textarea>
-
-        <textarea class="form-control settings-text" id="exampleFormControlTextarea1" rows="1" placeholder="DR___pepper"
-            maxlength="60"></textarea>
-        <img src="{% static '/images/smile.jpeg'%}" alt="smileImage" class="settings-image">
-
-        <div class="settings-form-group">
-            <textarea class="settings-form-control" id="exampleFormControlTextarea1" rows="1"
-                placeholder="C://smile.jpeg"></textarea>
-            <button class="settings-btn" id="chooseButton">Choose</button>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="dr_pepper" aria-label="Recipient's username"
+                aria-describedby="basic-addon2" maxlength="50">
         </div>
 
-        <button class="settings-btn" id="saveButton">Save</button>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="dr_pepper@mail.ru" aria-label="Recipient's username"
+                aria-describedby="basic-addon2" maxlength="50">
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="DR___pepper" aria-label="Recipient's username"
+                aria-describedby="basic-addon2" maxlength="50">
+        </div>
+
+        <img src="{% static '/images/smile.jpeg'%}" alt="smileImage" class="settings-image">
+
+        <div class="mb-3">
+            <input class="form-control" type="file" id="formFile">
+        </div>
+
+        <button class="settings-btn settings-save" id="saveButton" style="margin-left: 0;">Save</button>
     </div>
 
 </div>
